@@ -43,7 +43,9 @@ sub du {
 
 # リファレンスをCP932へエンコードし、標準エラー出力(STDERR)へ出力する
 sub dw {
-
+  my $ref_data = \(@_);
+  my $ref_data = Data::Recursive::Encode->encode("cp932",$ref_data);
+  print STDERR Dumper $ref_data;
 }
 
 1;
