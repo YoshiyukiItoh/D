@@ -37,8 +37,8 @@ XSLoader::load('D', $VERSION);
 # リファレンスをUTF-8へエンコードし、標準エラー出力(STDERR)へ出力する
 sub du {
   my $ref_data = \(@_);
-  my $ret = Data::Recursive::Encode->encode_utf8($ref_data);
-  print STDERR Dumper $ret;
+  my $ref_data = Data::Recursive::Encode->encode_utf8($ref_data);
+  print STDERR Dumper $ref_data;
 }
 
 # リファレンスをCP932へエンコードし、標準エラー出力(STDERR)へ出力する
