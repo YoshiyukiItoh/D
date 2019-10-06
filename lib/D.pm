@@ -31,6 +31,16 @@ require XSLoader;
 XSLoader::load('D', $VERSION);
 
 # Preloaded methods go here.
+# リファレンスをUTF-8へエンコードし、標準エラー出力(STDERR)へ出力する
+ sub du {
+
+ }
+
+ # リファレンスをCP932へエンコードし、標準エラー出力(STDERR)へ出力する
+ sub dw {
+
+ }
+
 
 1;
 __END__
@@ -72,7 +82,7 @@ If you have a web site set up for your module, mention it here.
 
 =head1 AUTHOR
 
-yoshi, E<lt>yoshi@localE<gt>
+yoshiyuki ito, E<lt>yoshiyuki.ito.biz@gmail.comE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
