@@ -4,6 +4,9 @@ use 5.018004;
 use strict;
 use warnings;
 
+use Data::Dumper;
+use Data::Recursive::Encode;
+
 require Exporter;
 
 our @ISA = qw(Exporter);
@@ -32,15 +35,16 @@ XSLoader::load('D', $VERSION);
 
 # Preloaded methods go here.
 # リファレンスをUTF-8へエンコードし、標準エラー出力(STDERR)へ出力する
- sub du {
+sub du {
+  my $ref_data = \(@_);
+  my $ret = Data::Recursive::Encode->encode_utf8($ref_data);
+  print STDERR Dumper $ret;
+}
 
- }
+# リファレンスをCP932へエンコードし、標準エラー出力(STDERR)へ出力する
+sub dw {
 
- # リファレンスをCP932へエンコードし、標準エラー出力(STDERR)へ出力する
- sub dw {
-
- }
-
+}
 
 1;
 __END__
