@@ -30,9 +30,6 @@ our @EXPORT = qw(
 
 our $VERSION = '0.01';
 
-require XSLoader;
-XSLoader::load('D', $VERSION);
-
 # Preloaded methods go here.
 # リファレンスをUTF-8へエンコードし、標準エラー出力(STDERR)へ出力する
 sub du {
