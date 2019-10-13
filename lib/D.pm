@@ -32,14 +32,14 @@ our @EXPORT = qw(
 our $VERSION = '0.01';
 
 # Preloaded methods go here.
-# リファレンスをUTF-8へエンコードし、標準エラー出力(STDERR)へ出力する
+# Encode reference to utf8 and output to STDERR.
 sub du {
   my $ref_data = \(@_);
   my $ref_data = Data::Recursive::Encode->encode_utf8($ref_data);
   print STDERR Dumper $ref_data;
 }
 
-# リファレンスをCP932へエンコードし、標準エラー出力(STDERR)へ出力する
+# Encode reference to cp932 and output to STDERR.
 sub dw {
   my $ref_data = \(@_);
   my $ref_data = Data::Recursive::Encode->encode("cp932",$ref_data);
