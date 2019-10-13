@@ -39,6 +39,7 @@ sub du {
   print STDERR Dumper $ref_data;
 }
 
+<<<<<<< HEAD
 # Encode reference to cp932 and output to STDERR.
 sub dw {
   my $ref_data = \(@_);
