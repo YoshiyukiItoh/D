@@ -36,14 +36,16 @@ our $VERSION = '0.01';
 sub du {
   my $ref_data = \(@_);
   $ref_data = Data::Recursive::Encode->encode_utf8($ref_data);
-  print STDERR Dumper $ref_data;
+  my $ret = Dumper $ref_data;
+  warn "$ret\n";
 }
 
 # Encode reference to cp932 and output to STDERR.
 sub dw {
   my $ref_data = \(@_);
   $ref_data = Data::Recursive::Encode->encode("cp932",$ref_data);
-  print STDERR Dumper $ref_data;
+  my $ret = Dumper $ref_data;
+  warn "$ret\n";
 }
 
 1;
