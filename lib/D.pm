@@ -62,11 +62,7 @@ D - Encode Values In A Structure
 
 =head1 DESCRIPTION
 
-Stub documentation for D, created by h2xs. It looks like the
-author of the extension was negligent enough to leave the stub
-unedited.
-
-Blah blah blah.
+D uses Data :: Recoursive :: Encode, encodes the structure and outputs it to STDERR.
 
 =head2 EXPORT
 
@@ -94,7 +90,7 @@ yoshiyuki ito, E<lt>yoshiyuki.ito.biz@gmail.comE<gt>
 Copyright (C) 2019 by yoshi
 
 This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself, either Perl version 5.18.4 or,
+it under the same terms as Perl itself, either Perl version 5.08.7 or,
 at your option, any later version of Perl 5 you may have available.
 
 
