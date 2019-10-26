@@ -52,12 +52,13 @@ __END__
 
 =head1 NAME
 
-D - Perl extension for blah blah blah
+D - Encode Values In A Structure
 
 =head1 SYNOPSIS
 
   use D;
-  blah blah blah
+  du($data);
+  dw($data);
 
 =head1 DESCRIPTION
 
