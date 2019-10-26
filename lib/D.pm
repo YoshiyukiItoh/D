@@ -25,8 +25,7 @@ our %EXPORT_TAGS = ( 'all' => [ qw(
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 
 our @EXPORT = qw(
-	du
-	dw
+	du dw
 );
 
 our $VERSION = '0.01';
@@ -64,7 +63,7 @@ D - Encode Values In A Structure
 
 =head1 DESCRIPTION
 
-D uses Data :: Recoursive :: Encode, encodes the structure and outputs it to STDERR.
+D uses Data::Recoursive::Encode, encodes the structure and outputs it to STDERR.
 
 =head2 EXPORT
 
