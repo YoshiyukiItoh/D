@@ -15,7 +15,6 @@ use D;
   my $ref_data1 = {
     hira=>"いとう",
     kanji=>"伊藤",
-    roma=>"ito"
   };
 
   my $output;
@@ -33,8 +32,6 @@ use D;
   like( $output, qr/$em1/);
   my $em2 = encode("UTF-8",'伊藤');
   like( $output, qr/$em2/);
-  my $em3 = encode("UTF-8",'ito');
-  like( $output, qr/$em3/);
 }
 
 done_testing;
