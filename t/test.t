@@ -8,9 +8,8 @@ use Test::More;
 
 use D;
 
-# run test
 # $ perl -Mblib test.t 
-
+# run du() test
 {
   my $ref_data1 = {
     hira=>"いとう",
@@ -33,6 +32,7 @@ use D;
   like( $output, qr/$em2/);
 }
 
+# run dw() test
 {
   my $ref_data2 = {
     hira=>"いとう",
