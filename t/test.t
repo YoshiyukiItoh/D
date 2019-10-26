@@ -27,10 +27,31 @@ use D;
 
   like( $output, qr/hira/);
   like( $output, qr/kanji/);
-  like( $output, qr/roma/);
   my $em1 = encode("UTF-8",'いとう');
   like( $output, qr/$em1/);
   my $em2 = encode("UTF-8",'伊藤');
+  like( $output, qr/$em2/);
+}
+
+{
+  my $ref_data2 = {
+    hira=>"いとう",
+    kanji=>"伊藤",
+  };
+
+  my $output;
+
+  local $SIG{__WARN__} = sub {
+    $output = shift;
+  };
+
+  dw($ref_data2);
+
+  like( $output, qr/hira/);
+  like( $output, qr/kanji/);
+  my $em1 = encode("cp932",'いとう');
+  like( $output, qr/$em1/);
+  my $em2 = encode("cp932",'伊藤');
   like( $output, qr/$em2/);
 }
 
