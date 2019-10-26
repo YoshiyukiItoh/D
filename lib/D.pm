@@ -35,14 +35,14 @@ our $VERSION = '0.01';
 # Encode reference to utf8 and output to STDERR.
 sub du {
   my $ref_data = \(@_);
-  my $ref_data = Data::Recursive::Encode->encode_utf8($ref_data);
+  $ref_data = Data::Recursive::Encode->encode_utf8($ref_data);
   print STDERR Dumper $ref_data;
 }
 
 # Encode reference to cp932 and output to STDERR.
 sub dw {
   my $ref_data = \(@_);
-  my $ref_data = Data::Recursive::Encode->encode("cp932",$ref_data);
+  $ref_data = Data::Recursive::Encode->encode("cp932",$ref_data);
   print STDERR Dumper $ref_data;
 }
 
