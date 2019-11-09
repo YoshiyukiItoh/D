@@ -1,6 +1,3 @@
-Revision history for Perl extension D.
+0.01 2019-11-09
 
-0.01  Sat Oct  5 23:02:21 2019
-	- original version; created by h2xs 1.23 with options
-		-A -n D
-
+  - First release.

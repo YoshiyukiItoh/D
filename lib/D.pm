@@ -37,7 +37,7 @@ sub dw {
 
 =head1 NAME
 
-D - Encode Values In A Structure
+D - Provides utility functions to encode data and dump it to STDERR.
 
 =head1 SYNOPSIS
   
