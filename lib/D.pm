@@ -10,6 +10,10 @@ use Carp ();
 use Scalar::Util qw(blessed refaddr);
 use B;
 
+$Data::Dumper::Sortkeys = 1;
+$Data::Dumper::Indent = 1;
+$Data::Dumper::Terse = 1;
+
 require Exporter;
 
 our @ISA = qw(Exporter);
