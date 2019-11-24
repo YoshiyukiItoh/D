@@ -38,6 +38,13 @@ sub dw {
   warn $ret;
 }
 
+# Not Encode data and dump it to STDERR using warn function and Data::Dumper.
+sub dn {
+  my ($ref_data) = @_;
+  my $ret = Dumper $ref_data;
+  warn $ret;
+}
+
 # Copy from Data::Recursive::Encode
 our $DO_NOT_PROCESS_NUMERIC_VALUE = 0;
 sub _apply {
