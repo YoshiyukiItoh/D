@@ -18,7 +18,7 @@ require Exporter;
 
 our @ISA = qw(Exporter);
 
-our @EXPORT = qw(du dw);
+our @EXPORT = qw(du dw dn);
 
 our $VERSION = '0.01';
 
