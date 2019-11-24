@@ -27,7 +27,7 @@ sub du {
   my ($ref_data) = @_;
   $ref_data = _encode('UTF-8', $ref_data);
   my $ret = Dumper $ref_data;
-  warn "$ret\n";
+  warn $ret;
 }
 
 # Encode data to cp932 and dump it to STDERR using warn function adn Data::Dumper.
@@ -35,7 +35,7 @@ sub dw {
   my ($ref_data) = @_;
   $ref_data = _encode("cp932",$ref_data);
   my $ret = Dumper $ref_data;
-  warn "$ret\n";
+  warn $ret;
 }
 
 # Copy from Data::Recursive::Encode
