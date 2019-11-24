@@ -24,12 +24,10 @@ use D;
 
   du($ref_data1);
 
-  like( $output, qr/hira/);
-  like( $output, qr/kanji/);
   my $em1 = encode("UTF-8",'いとう');
-  like( $output, qr/$em1/);
+  like( $output, qr/\s\s\'hira\'\s=>\s\'$em1\',/);
   my $em2 = encode("UTF-8",'伊藤');
-  like( $output, qr/$em2/);
+  like( $output, qr/\s\s\'kanji\'\s=>\s\'$em2\'/);
 }
 
 # run dw() test
@@ -47,12 +45,10 @@ use D;
 
   dw($ref_data2);
 
-  like( $output, qr/hira/);
-  like( $output, qr/kanji/);
   my $em1 = encode("cp932",'いとう');
-  like( $output, qr/$em1/);
+  like( $output, qr/\s\s\'hira\'\s=>\s\'$em1\',/);
   my $em2 = encode("cp932",'伊藤');
-  like( $output, qr/$em2/);
+  like( $output, qr/\s\s\'kanji\'\s=>\s\'$em2\'/);
 }
 
 done_testing;
