@@ -27,6 +27,7 @@ sub du {
   my ($ref_data) = @_;
   $ref_data = _encode('UTF-8', $ref_data);
   my $ret = Dumper $ref_data;
+  chomp $ret;
   warn $ret;
 }
 
@@ -35,6 +36,7 @@ sub dw {
   my ($ref_data) = @_;
   $ref_data = _encode("cp932",$ref_data);
   my $ret = Dumper $ref_data;
+  chomp $ret;
   warn $ret;
 }
 
@@ -42,6 +44,7 @@ sub dw {
 sub dn {
   my ($ref_data) = @_;
   my $ret = Dumper $ref_data;
+  chomp $ret;
   warn $ret;
 }
 
