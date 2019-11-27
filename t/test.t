@@ -51,4 +51,29 @@ use D;
   like( $output, qr/\s\s\'kanji\'\s=>\s\'$em2\'/);
 }
 
+# run dn() test
+{
+  my $ref_data3 = {
+    hira=>"いとう",
+    kanji=>"伊藤",
+  };
+
+  my $output;
+
+  local $SIG{__WARN__} = sub {
+    $output = shift;
+  };
+
+  dn($ref_data3);
+
+  #$Data::Dumper::Indent = 1;
+  #$Data::Dumper::Terse = 1;
+  my $em1 = Dumper 'いとう';
+  chomp $em1;
+  like( $output, qr/\s\s\'hira\'\s=>\s$em1,/);
+  my $em2 = Dumper '伊藤';
+  chomp $em2;
+  like( $output, qr/\s\s\'kanji\'\s=>\s$em2/);
+}
+
 done_testing;
