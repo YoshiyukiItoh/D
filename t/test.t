@@ -54,8 +54,8 @@ use D;
 # run dn() test
 {
   my $ref_data3 = {
-    hira=>"いとう",
-    kanji=>"伊藤",
+    hira=>encode("UTF-8","いとう"),
+    kanji=>encode("UTF-8","伊藤"),
   };
 
   my $output;
@@ -66,14 +66,10 @@ use D;
 
   dn($ref_data3);
 
-  #$Data::Dumper::Indent = 1;
-  #$Data::Dumper::Terse = 1;
-  my $em1 = Dumper 'いとう';
-  chomp $em1;
-  like( $output, qr/\s\s\'hira\'\s=>\s$em1,/);
-  my $em2 = Dumper '伊藤';
-  chomp $em2;
-  like( $output, qr/\s\s\'kanji\'\s=>\s$em2/);
+  my $em1 = encode("UTF-8",'いとう');
+  like( $output, qr/\s\s\'hira\'\s=>\s\'$em1\',/);
+  my $em2 = encode("UTF-8",'伊藤');
+  like( $output, qr/\s\s\'kanji\'\s=>\s\'$em2\'/);
 }
 
 done_testing;
