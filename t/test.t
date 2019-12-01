@@ -72,4 +72,19 @@ use D;
   like( $output, qr/\s\s\'kanji\'\s=>\s\'$em2\'/);
 }
 
+# run test
+{
+  my $tdata1 = 'いとう';
+  my $output;
+
+  local $SIG{__WARN__} = sub {
+    $output = shift;
+  };
+
+  du(\$tdata1);
+
+  my $em1 = encode("UTF-8",'いとう');
+  like( $output, qr/^\\\'$em1\'\sat\s/);
+}
+
 done_testing;
