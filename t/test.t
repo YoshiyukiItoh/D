@@ -87,4 +87,22 @@ use D;
   like( $output, qr/^\\\'$em1\'\sat\s/);
 }
 
+# run code reference test
+{
+  my $sum_ref = sub {
+    my ($num1, $num2) = @_;
+    my $total = $num1 + $num2;
+    return $total;
+  };
+  my $output;
+
+  local $SIG{__WARN__} = sub {
+    $output = shift;
+  };
+
+  du($sum_ref);
+
+  like( $output, qr/^sub { "DUMMY" }\sat\s/);
+}
+
 done_testing;
