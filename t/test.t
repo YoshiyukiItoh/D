@@ -72,7 +72,7 @@ use D;
   like( $output, qr/\s\s\'kanji\'\s=>\s\'$em2\'/);
 }
 
-# run test
+# run scalar reference test
 {
   my $tdata1 = 'いとう';
   my $output;
