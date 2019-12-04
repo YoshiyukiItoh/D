@@ -59,6 +59,20 @@ use D;
   like( $output, qr/\s\s\'hira\'\s=>\s\'$em1\'/);
 }
 
+# run du test (array reference)
+{
+  my $ref_data4 = ["あいう"];
+
+  my $output;
+  local $SIG{__WARN__} = sub {
+    $output = shift;
+  };
+
+  du($ref_data4);
+  my $em1 = encode("UTF-8",'あいう');
+  like( $output, qr/\s\s\'$em1\'/);
+}
+
 # run scalar reference test
 {
   my $tdata1 = 'あいう';
