@@ -115,4 +115,31 @@ use D;
   like( $output, qr/^sub { "DUMMY" }\sat\st\/test\.t\sline 114./);
 }
 
+{
+  my $ref_data5 = { int => 1 };
+
+  my $output;
+  local $SIG{__WARN__} = sub {
+    $output = shift;
+  };
+
+  dn($ref_data5);
+
+  like( $output, qr/\s\s\'int\'\s=>\s1/);
+}
+
+{
+  my $ref_data6 = { int => 1 };
+  local $D::DO_NOT_PROCESS_NUMERIC_VALUE = 1;
+
+  my $output;
+  local $SIG{__WARN__} = sub {
+    $output = shift;
+  };
+
+  dn($ref_data6);
+
+  like( $output, qr/\s\s\'int\'\s=>\s1/);
+}
+
 done_testing;
