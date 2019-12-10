@@ -10,10 +10,6 @@ use Carp ();
 use Scalar::Util qw(blessed refaddr);
 use B;
 
-$Data::Dumper::Sortkeys = 1;
-$Data::Dumper::Indent = 1;
-$Data::Dumper::Terse = 1;
-
 require Exporter;
 
 our @ISA = qw(Exporter);
@@ -26,7 +22,9 @@ our $VERSION = '0.01';
 sub du {
   my ($ref_data) = @_;
   $ref_data = _encode('UTF-8', $ref_data);
-  my $ret = Dumper $ref_data;
+  my $d = Data::Dumper->new([$ref_data]);
+  $d->Sortkeys(1)->Indent(1)->Terse(1);
+  my $ret = $d->Dump;
   chomp $ret;
   warn $ret;
 }
@@ -35,7 +33,9 @@ sub du {
 sub dw {
   my ($ref_data) = @_;
   $ref_data = _encode("cp932",$ref_data);
-  my $ret = Dumper $ref_data;
+  my $d = Data::Dumper->new([$ref_data]);
+  $d->Sortkeys(1)->Indent(1)->Terse(1);
+  my $ret = $d->Dump;
   chomp $ret;
   warn $ret;
 }
@@ -43,7 +43,9 @@ sub dw {
 # Not Encode data and dump it to STDERR using warn function and Data::Dumper.
 sub dn {
   my ($ref_data) = @_;
-  my $ret = Dumper $ref_data;
+  my $d = Data::Dumper->new([$ref_data]);
+  $d->Sortkeys(1)->Indent(1)->Terse(1);
+  my $ret = $d->Dump;
   chomp $ret;
   warn $ret;
 }
