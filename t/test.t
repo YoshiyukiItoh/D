@@ -13,6 +13,7 @@ use D;
 {
   my $ref_data1 = {
     hira=>"あいう",
+    kana=>"アイウ"
   };
 
   my $output;
@@ -22,13 +23,16 @@ use D;
 
   du($ref_data1);
   my $em1 = encode("UTF-8",'あいう');
-  like( $output, qr/\s\s\'hira\'\s=>\s\'$em1\'/);
+  my $em2 = encode("UTF-8",'アイウ');
+  like( $output, qr/\s\s\'hira\'\s=>\s\'$em1\',/);
+  like( $output, qr/\s\s\'kana\'\s=>\s\'$em2\'/);
 }
 
 # run dw() test
 {
   my $ref_data2 = {
     hira=>"あいう",
+    kana=>"アイウ"
   };
 
   my $output;
@@ -39,13 +43,16 @@ use D;
   dw($ref_data2);
 
   my $em1 = encode("cp932",'あいう');
-  like( $output, qr/\s\s\'hira\'\s=>\s\'$em1\'/);
+  my $em2 = encode("cp932",'アイウ');
+  like( $output, qr/\s\s\'hira\'\s=>\s\'$em1\',/);
+  like( $output, qr/\s\s\'kana\'\s=>\s\'$em2\'/);
 }
 
 # run dn() test
 {
   my $ref_data3 = {
     hira=>encode("UTF-8","あいう"),
+    kana=>encode("UTF-8","アイウ"),
   };
 
   my $output;
@@ -56,12 +63,14 @@ use D;
   dn($ref_data3);
 
   my $em1 = encode("UTF-8",'あいう');
-  like( $output, qr/\s\s\'hira\'\s=>\s\'$em1\'/);
+  my $em2 = encode("UTF-8",'アイウ');
+  like( $output, qr/\s\s\'hira\'\s=>\s\'$em1\',/);
+  like( $output, qr/\s\s\'kana\'\s=>\s\'$em2\'/);
 }
 
 # run du test (array reference)
 {
-  my $ref_data4 = ["あいう"];
+  my $ref_data4 = ["あいう", "アイウ"];
 
   my $output;
   local $SIG{__WARN__} = sub {
@@ -70,7 +79,9 @@ use D;
 
   du($ref_data4);
   my $em1 = encode("UTF-8",'あいう');
-  like( $output, qr/\s\s\'$em1\'/);
+  my $em2 = encode("UTF-8",'アイウ');
+  like( $output, qr/\s\s\'$em1\',/);
+  like( $output, qr/\s\s\'$em2\'/);
 }
 
 # run scalar reference test
@@ -90,10 +101,8 @@ use D;
 
 # run code reference test
 {
-  my $sum_ref = sub {
-    my ($num1, $num2) = @_;
-    my $total = $num1 + $num2;
-    return $total;
+  my $code_ref = sub {
+    print "test function.\n";
   };
 
   my $output;
@@ -101,7 +110,7 @@ use D;
     $output = shift;
   };
 
-  du($sum_ref);
+  du($code_ref);
 
   like( $output, qr/^sub { "DUMMY" }\sat\s/);
 }
