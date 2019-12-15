@@ -18,7 +18,6 @@ our @EXPORT = qw(du dw dn);
 
 our $VERSION = '0.01';
 
-# Encode data to UTF-8 and dump it to STDERR using warn function adn Data::Dumper.
 sub du {
   my ($ref_data) = @_;
   $ref_data = _encode('UTF-8', $ref_data);
@@ -29,7 +28,6 @@ sub du {
   carp $ret;
 }
 
-# Encode data to cp932 and dump it to STDERR using warn function adn Data::Dumper.
 sub dw {
   my ($ref_data) = @_;
   $ref_data = _encode("cp932",$ref_data);
@@ -40,7 +38,6 @@ sub dw {
   carp $ret;
 }
 
-# Not Encode data and dump it to STDERR using warn function and Data::Dumper.
 sub dn {
   my ($ref_data) = @_;
   my $d = Data::Dumper->new([$ref_data]);
@@ -128,11 +125,14 @@ D - Provides utility functions to encode data and dump it to STDERR.
   # Reference data that contains decoded strings
   my $data = [{name => 'あ'}, {name => 'い'}];
   
-  # Encode all strings to UTF-8 in data and dump it to STDERR using warn function and Data::Dumper.
+  # Encode all strings in reference data to UTF-8 and dump the reference data to STDERR
   du $data;
   
-  # Encode all strings to cp932 in data and dump it to STDERR using warn function and Data::Dumper.
+  # Encode all strings in reference data to cp932 and dump the reference data.
   dw $data;
+
+  # Dump reference data to STDERR without encoding.
+  dn $data;
 
 =head1 DESCRIPTION
 
@@ -142,25 +142,31 @@ D module provides utility functions to encode data and dump it to STDERR.
 
 =over 2
 
-=item * Export C<du> and C<dw> functions. These function names are consist of two characters. Don't conflict debug command 'p'.
+=item * Export C<du> and C<dw> and C<dn> functions. Don't conflict debug command such as 'p' because these function names are consist of two characters.
+
+=item * Encode all strings in reference data in C<du> and C<dw> function.
 
 =item * C<du> is a short name of "dump UTF-8"
 
 =item * C<dw> is a short name of "dump Windows cp932"
 
-=item * Can wirte dump operation by onliner: useD;du $data; useD;dw $data;
+=item * C<dn> is a short name of "dump no encoding"
 
-=item * Encode all strings in reference data
+=item * Onliner is useful. "useD;du $data;" or "useD;dw $data;" or "useD;dn $data;"
 
-=item * Use Data::Dumper::Dumper function to dump data
+=item * Use C<Dump> method of L<Data::Dumper> to dump data
 
-=item * Use warn function to print STDERR
+=item * Print line number and file name using C<carp> function of L<Carp>
+
+=item * Keys of hash of dumped data is sorted.
+
+=item * Don't print "$VAR1 =" unlike L<Data::Dumper> default.
 
 =back
 
 =head1 EXPORT
 
-Export C<du> and C<dw> functions.
+Export C<du> and C<dw> and C<dn> functions.
 
 =head1 FUNCTIONS
 
@@ -168,11 +174,21 @@ Export C<du> and C<dw> functions.
 
   du $data;
 
-Encode all strings in reference data to UTF-8 and dump it to STDERR using warn function and L<Data::Dumper>.
+Encode all strings in reference data to UTF-8 and dump the reference data to STDERR using C<carp> function of L<Carp> and C<Dump> method of L<Data::Dumper>.
+
+If the argument is not reference data such as a string, it is also dumped in the same way as reference data.
 
 =head2 dw
 
-Encode all strings in reference data to cp932 and dump it to STDERR using warn function and L<Data::Dumper>.
+Encode all strings in reference data to cp932 and dump the reference data to STDERR using C<carp> function of L<Carp> and C<Dump> method of L<Data::Dumper>.
+
+If the argument is not reference data such as a string, it is also dumped in the same way as reference data.
+
+=head2 dn
+
+Dump reference data to STDERR without encoding using C<carp> function of L<Carp> and C<Dump> method of L<Data::Dumper>.
+
+If the argument is not reference data such as a string, it is also dumped in the same way as reference data.
 
 =head1 Bug Report
 
@@ -180,7 +196,7 @@ L<https://github.com/YoshiyukiItoh/D>
 
 =head1 SEE ALSO
 
-L<Data::Dumper>, L<Data::Recursive::Encode>
+L<Data::Dumper>, L<Carp>, L<Data::Recursive::Encode>
 
 =head1 AUTHOR
 
@@ -195,6 +211,5 @@ Copyright (C) 2019 by yoshi, Yuki Kimoto
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.08.7 or,
 at your option, any later version of Perl 5 you may have available.
-
 
 =cut
