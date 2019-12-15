@@ -6,7 +6,7 @@ use warnings;
 
 use Data::Dumper;
 use Encode ();
-use Carp ();
+use Carp 'carp';
 use Scalar::Util qw(blessed refaddr);
 use B;
 
@@ -26,7 +26,7 @@ sub du {
   $d->Sortkeys(1)->Indent(1)->Terse(1);
   my $ret = $d->Dump;
   chomp $ret;
-  warn $ret;
+  carp $ret;
 }
 
 # Encode data to cp932 and dump it to STDERR using warn function adn Data::Dumper.
@@ -37,7 +37,7 @@ sub dw {
   $d->Sortkeys(1)->Indent(1)->Terse(1);
   my $ret = $d->Dump;
   chomp $ret;
-  warn $ret;
+  carp $ret;
 }
 
 # Not Encode data and dump it to STDERR using warn function and Data::Dumper.
@@ -47,7 +47,7 @@ sub dn {
   $d->Sortkeys(1)->Indent(1)->Terse(1);
   my $ret = $d->Dump;
   chomp $ret;
-  warn $ret;
+  carp $ret;
 }
 
 # Copy from Data::Recursive::Encode
