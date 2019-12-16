@@ -20,105 +20,105 @@ http://www.pjcj.net
 <h1>File Coverage</h1>
 <table>
 <tr><td class="h" align="right">File:</td><td align="left">blib/lib/D.pm</td></tr>
-<tr><td class="h" align="right">Coverage:</td><td align="left" class="c2">92.4%</td></tr>
+<tr><td class="h" align="right">Coverage:</td><td align="left" class="c2">92.8%</td></tr>
 </table>
 <div><br/></div>
 <table>
 <tr><th>line</th><th>stmt</th><th>bran</th><th>cond</th><th>sub</th><th>time</th><th>code</th></tr>
 <tr><td class="h">1</td><td></td><td></td><td></td><td></td><td></td><td class="s">package D;</td></tr>
-<tr><td class="h">2</td><td colspan="6"></td></tr><tr><td class="h">3</td><td><div class="c3">3</div><div class="c3">3</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-D-pm--subroutine.html#L3">3</a></div></td><td><div>39855</div><div>9</div></td><td class="s">use 5.008007;</td></tr>
-<tr><td class="h">4</td><td><div class="c3">3</div><div class="c3">3</div><div class="c3">3</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-D-pm--subroutine.html#L4">3</a></div></td><td><div>10</div><div>6</div><div>47</div></td><td class="s">use strict;</td></tr>
-<tr><td class="h">5</td><td><div class="c3">3</div><div class="c3">3</div><div class="c3">3</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-D-pm--subroutine.html#L5">3</a></div></td><td><div>8</div><div>5</div><div>40</div></td><td class="s">use warnings;</td></tr>
-<tr><td class="h">6</td><td colspan="6"></td></tr><tr><td class="h">7</td><td><div class="c3">3</div><div class="c3">3</div><div class="c3">3</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-D-pm--subroutine.html#L7">3</a></div></td><td><div>789</div><div>9046</div><div>94</div></td><td class="s">use Data::Dumper;</td></tr>
-<tr><td class="h">8</td><td><div class="c3">3</div><div class="c3">3</div><div class="c3">3</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-D-pm--subroutine.html#L8">3</a></div></td><td><div>740</div><div>9776</div><div>24</div></td><td class="s">use Encode ();</td></tr>
-<tr><td class="h">9</td><td><div class="c3">3</div><div class="c3">3</div><div class="c3">3</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-D-pm--subroutine.html#L9">3</a></div></td><td><div>11</div><div>3</div><div>23</div></td><td class="s">use Carp ();</td></tr>
-<tr><td class="h">10</td><td><div class="c3">3</div><div class="c3">3</div><div class="c3">3</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-D-pm--subroutine.html#L10">3</a></div></td><td><div>6</div><div>5</div><div>109</div></td><td class="s">use Scalar::Util qw(blessed refaddr);</td></tr>
-<tr><td class="h">11</td><td><div class="c3">3</div><div class="c3">3</div><div class="c3">3</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-D-pm--subroutine.html#L11">3</a></div></td><td><div>8</div><div>2</div><div>873</div></td><td class="s">use B;</td></tr>
-<tr><td class="h">12</td><td colspan="6"></td></tr><tr><td class="h">13</td><td></td><td></td><td></td><td></td><td></td><td class="s">$Data::Dumper::Sortkeys = 1;</td></tr>
-<tr><td class="h">14</td><td></td><td></td><td></td><td></td><td></td><td class="s">$Data::Dumper::Indent = 1;</td></tr>
-<tr><td class="h">15</td><td></td><td></td><td></td><td></td><td></td><td class="s">$Data::Dumper::Terse = 1;</td></tr>
-<tr><td class="h">16</td><td colspan="6"></td></tr><tr><td class="h">17</td><td></td><td></td><td></td><td></td><td></td><td class="s">require Exporter;</td></tr>
-<tr><td class="h">18</td><td colspan="6"></td></tr><tr><td class="h">19</td><td></td><td></td><td></td><td></td><td></td><td class="s">our @ISA = qw(Exporter);</td></tr>
-<tr><td class="h">20</td><td colspan="6"></td></tr><tr><td class="h">21</td><td></td><td></td><td></td><td></td><td></td><td class="s">our @EXPORT = qw(du dw dn);</td></tr>
-<tr><td class="h">22</td><td colspan="6"></td></tr><tr><td class="h">23</td><td></td><td></td><td></td><td></td><td></td><td class="s">our $VERSION = &#39;0.01&#39;;</td></tr>
-<tr><td class="h">24</td><td colspan="6"></td></tr><tr><td class="h">25</td><td></td><td></td><td></td><td></td><td></td><td class="s"># Encode data to UTF-8 and dump it to STDERR using warn function adn Data::Dumper.</td></tr>
-<tr><td class="h">26</td><td></td><td></td><td></td><td></td><td></td><td class="s">sub du {</td></tr>
-<tr><td class="h">27</td><td><div class="c3">4</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-D-pm--subroutine.html#L27">4</a></div></td><td><div>30868</div></td><td class="s">&nbsp;&nbsp;my ($ref_data) = @_;</td></tr>
-<tr><td class="h">28</td><td><div class="c3">4</div></td><td></td><td></td><td></td><td><div>6</div></td><td class="s">&nbsp;&nbsp;$ref_data = _encode(&#39;UTF-8&#39;, $ref_data);</td></tr>
-<tr><td class="h">29</td><td><div class="c3">4</div></td><td></td><td></td><td></td><td><div>13</div></td><td class="s">&nbsp;&nbsp;my $ret = Dumper $ref_data;</td></tr>
-<tr><td class="h">30</td><td><div class="c3">4</div></td><td></td><td></td><td></td><td><div>127</div></td><td class="s">&nbsp;&nbsp;chomp $ret;</td></tr>
-<tr><td class="h">31</td><td><div class="c3">4</div></td><td></td><td></td><td></td><td><div>13</div></td><td class="s">&nbsp;&nbsp;warn $ret;</td></tr>
-<tr><td class="h">32</td><td></td><td></td><td></td><td></td><td></td><td class="s">}</td></tr>
-<tr><td class="h">33</td><td colspan="6"></td></tr><tr><td class="h">34</td><td></td><td></td><td></td><td></td><td></td><td class="s"># Encode data to cp932 and dump it to STDERR using warn function adn Data::Dumper.</td></tr>
-<tr><td class="h">35</td><td></td><td></td><td></td><td></td><td></td><td class="s">sub dw {</td></tr>
-<tr><td class="h">36</td><td><div class="c3">1</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-D-pm--subroutine.html#L36">1</a></div></td><td><div>359</div></td><td class="s">&nbsp;&nbsp;my ($ref_data) = @_;</td></tr>
-<tr><td class="h">37</td><td><div class="c3">1</div></td><td></td><td></td><td></td><td><div>2</div></td><td class="s">&nbsp;&nbsp;$ref_data = _encode(&quot;cp932&quot;,$ref_data);</td></tr>
-<tr><td class="h">38</td><td><div class="c3">1</div></td><td></td><td></td><td></td><td><div>4</div></td><td class="s">&nbsp;&nbsp;my $ret = Dumper $ref_data;</td></tr>
-<tr><td class="h">39</td><td><div class="c3">1</div></td><td></td><td></td><td></td><td><div>42</div></td><td class="s">&nbsp;&nbsp;chomp $ret;</td></tr>
-<tr><td class="h">40</td><td><div class="c3">1</div></td><td></td><td></td><td></td><td><div>5</div></td><td class="s">&nbsp;&nbsp;warn $ret;</td></tr>
-<tr><td class="h">41</td><td></td><td></td><td></td><td></td><td></td><td class="s">}</td></tr>
-<tr><td class="h">42</td><td colspan="6"></td></tr><tr><td class="h">43</td><td></td><td></td><td></td><td></td><td></td><td class="s"># Not Encode data and dump it to STDERR using warn function and Data::Dumper.</td></tr>
-<tr><td class="h">44</td><td></td><td></td><td></td><td></td><td></td><td class="s">sub dn {</td></tr>
-<tr><td class="h">45</td><td><div class="c3">3</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-D-pm--subroutine.html#L45">3</a></div></td><td><div>845</div></td><td class="s">&nbsp;&nbsp;my ($ref_data) = @_;</td></tr>
-<tr><td class="h">46</td><td><div class="c3">3</div></td><td></td><td></td><td></td><td><div>6</div></td><td class="s">&nbsp;&nbsp;my $ret = Dumper $ref_data;</td></tr>
-<tr><td class="h">47</td><td><div class="c3">3</div></td><td></td><td></td><td></td><td><div>89</div></td><td class="s">&nbsp;&nbsp;chomp $ret;</td></tr>
-<tr><td class="h">48</td><td><div class="c3">3</div></td><td></td><td></td><td></td><td><div>10</div></td><td class="s">&nbsp;&nbsp;warn $ret;</td></tr>
-<tr><td class="h">49</td><td></td><td></td><td></td><td></td><td></td><td class="s">}</td></tr>
-<tr><td class="h">50</td><td colspan="6"></td></tr><tr><td class="h">51</td><td></td><td></td><td></td><td></td><td></td><td class="s"># Copy from Data::Recursive::Encode</td></tr>
-<tr><td class="h">52</td><td></td><td></td><td></td><td></td><td></td><td class="s">our $DO_NOT_PROCESS_NUMERIC_VALUE = 0;</td></tr>
-<tr><td class="h">53</td><td></td><td></td><td></td><td></td><td></td><td class="s">sub _apply {</td></tr>
-<tr><td class="h">54</td><td><div class="c3">9</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-D-pm--subroutine.html#L54">9</a></div></td><td><div>9</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my $code = shift;</td></tr>
-<tr><td class="h">55</td><td><div class="c3">9</div></td><td></td><td></td><td></td><td><div>7</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my $seen = shift;</td></tr>
-<tr><td class="h">56</td><td colspan="6"></td></tr><tr><td class="h">57</td><td><div class="c3">9</div></td><td></td><td></td><td></td><td><div>5</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my @retval;</td></tr>
-<tr><td class="h">58</td><td><div class="c3">9</div></td><td></td><td></td><td></td><td><div>11</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;for my $arg (@_) {</td></tr>
-<tr><td class="h">59</td><td><div class="c3">11</div></td><td><div class="c3" title="T/F"><a href="blib-lib-D-pm--branch.html#L59">100</a></div></td><td></td><td></td><td><div>14</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(my $ref = ref $arg){</td></tr>
-<tr><td class="h">60</td><td><div class="c3">5</div></td><td></td><td></td><td></td><td><div>6</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;my $refaddr = refaddr($arg);</td></tr>
-<tr><td class="h">61</td><td><div class="c3">5</div></td><td></td><td></td><td></td><td><div>5</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;my $proto;</td></tr>
-<tr><td class="h">62</td><td colspan="6"></td></tr><tr><td class="h">63</td><td><div class="c3">5</div></td><td><div class="c0" title="-/F"><a href="blib-lib-D-pm--branch.html#L63">50</a></div><div class="c3" title="T/F"><a href="blib-lib-D-pm--branch.html#L63">100</a></div><div class="c3" title="T/F"><a href="blib-lib-D-pm--branch.html#L63">100</a></div><div class="c3" title="T/F"><a href="blib-lib-D-pm--branch.html#L63">100</a></div></td><td><div class="c0"><a href="blib-lib-D-pm--condition.html#L63">67</a></div></td><td></td><td><div>16</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(defined($proto = $seen-&gt;{$refaddr})){</td></tr>
-<tr><td class="h">64</td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# noop</td></tr>
-<tr><td class="h">65</td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
-<tr><td class="h">66</td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elsif($ref eq &#39;ARRAY&#39;){</td></tr>
-<tr><td class="h">67</td><td><div class="c3">1</div></td><td></td><td></td><td></td><td><div>1</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$proto = $seen-&gt;{$refaddr} = [];</td></tr>
-<tr><td class="h">68</td><td><div class="c3">1</div><div class="c3">1</div><div class="c3">1</div></td><td></td><td></td><td></td><td><div>2</div><div>2</div><div>1</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{$proto} = _apply($code, $seen, @{$arg});</td></tr>
-<tr><td class="h">69</td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
-<tr><td class="h">70</td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elsif($ref eq &#39;HASH&#39;){</td></tr>
-<tr><td class="h">71</td><td><div class="c3">2</div></td><td></td><td></td><td></td><td><div>3</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$proto = $seen-&gt;{$refaddr} = {};</td></tr>
-<tr><td class="h">72</td><td><div class="c3">2</div><div class="c3">2</div><div class="c3">2</div></td><td></td><td></td><td></td><td><div>3</div><div>3</div><div>5</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%{$proto} = _apply($code, $seen, %{$arg});</td></tr>
-<tr><td class="h">73</td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
-<tr><td class="h">74</td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elsif($ref eq &#39;REF&#39; or $ref eq &#39;SCALAR&#39;){</td></tr>
-<tr><td class="h">75</td><td><div class="c3">1</div><div class="c3">1</div></td><td></td><td></td><td></td><td><div>2</div><div>1</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$proto = $seen-&gt;{$refaddr} = \do{ my $scalar };</td></tr>
-<tr><td class="h">76</td><td><div class="c3">1</div><div class="c3">1</div><div class="c3">1</div></td><td></td><td></td><td></td><td><div>2</div><div>1</div><div>1</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${$proto} = _apply($code, $seen, ${$arg});</td></tr>
-<tr><td class="h">77</td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
-<tr><td class="h">78</td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else{ # CODE, GLOB, IO, LVALUE etc.</td></tr>
-<tr><td class="h">79</td><td><div class="c3">1</div></td><td></td><td></td><td></td><td><div>2</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$proto = $seen-&gt;{$refaddr} = $arg;</td></tr>
-<tr><td class="h">80</td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
-<tr><td class="h">81</td><td colspan="6"></td></tr><tr><td class="h">82</td><td><div class="c3">5</div></td><td></td><td></td><td></td><td><div>7</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;push @retval, $proto;</td></tr>
-<tr><td class="h">83</td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
-<tr><td class="h">84</td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else{</td></tr>
-<tr><td class="h">85</td><td><div class="c3">6</div></td><td><div class="c0" title="T/-"><a href="blib-lib-D-pm--branch.html#L85">50</a></div></td><td><div class="c0"><a href="blib-lib-D-pm--condition.html#L85">33</a></div></td><td></td><td><div>17</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;push @retval, defined($arg) &amp;&amp; (! $DO_NOT_PROCESS_NUMERIC_VALUE || ! _is_number($arg)) ? $code-&gt;($arg) : $arg;</td></tr>
-<tr><td class="h">86</td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
-<tr><td class="h">87</td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
-<tr><td class="h">88</td><td colspan="6"></td></tr><tr><td class="h">89</td><td><div class="c3">9</div></td><td><div class="c3" title="T/F"><a href="blib-lib-D-pm--branch.html#L89">100</a></div></td><td></td><td></td><td><div>16</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;return wantarray ? @retval : $retval[0];</td></tr>
-<tr><td class="h">90</td><td></td><td></td><td></td><td></td><td></td><td class="s">}</td></tr>
-<tr><td class="h">91</td><td colspan="6"></td></tr><tr><td class="h">92</td><td></td><td></td><td></td><td></td><td></td><td class="s"># Copy from Data::Recursive::Encode</td></tr>
-<tr><td class="h">93</td><td></td><td></td><td></td><td></td><td></td><td class="s">sub _encode {</td></tr>
-<tr><td class="h">94</td><td><div class="c3">5</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-D-pm--subroutine.html#L94">5</a></div></td><td><div>6</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my ($encoding, $stuff, $check) = @_;</td></tr>
-<tr><td class="h">95</td><td><div class="c3">5</div></td><td></td><td><div class="c0"><a href="blib-lib-D-pm--condition.html#L95">33</a></div></td><td></td><td><div>9</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;$encoding = Encode::find_encoding($encoding)</td></tr>
-<tr><td class="h">96</td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|| Carp::croak(&quot;unknown encoding &#39;$encoding&#39;&quot;);</td></tr>
-<tr><td class="h">97</td><td><div class="c3">5</div></td><td></td><td><div class="c0"><a href="blib-lib-D-pm--condition.html#L97">50</a></div></td><td></td><td><div>4194</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;$check ||= 0;</td></tr>
-<tr><td class="h">98</td><td><div class="c3">5</div><div class="c3">6</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-D-pm--subroutine.html#L98">6</a></div></td><td><div>11</div><div>26</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;_apply(sub { $encoding-&gt;encode($_[0], $check) }, {}, $stuff);</td></tr>
-<tr><td class="h">99</td><td></td><td></td><td></td><td></td><td></td><td class="s">}</td></tr>
-<tr><td class="h">100</td><td colspan="6"></td></tr><tr><td class="h">101</td><td></td><td></td><td></td><td></td><td></td><td class="s"># Copy from Data::Recursive::Encode</td></tr>
-<tr><td class="h">102</td><td></td><td></td><td></td><td></td><td></td><td class="s">sub _is_number {</td></tr>
-<tr><td class="h">103</td><td><div class="c3">12</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-D-pm--subroutine.html#L103">12</a></div></td><td><div>34121</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my $value = shift;</td></tr>
-<tr><td class="h">104</td><td><div class="c3">12</div></td><td><div class="c3" title="T/F"><a href="blib-lib-D-pm--branch.html#L104">100</a></div></td><td></td><td></td><td><div>17</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;return 0 unless defined $value;</td></tr>
-<tr><td class="h">105</td><td colspan="6"></td></tr><tr><td class="h">106</td><td><div class="c3">11</div></td><td></td><td></td><td></td><td><div>20</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my $b_obj = B::svref_2object(\$value);</td></tr>
-<tr><td class="h">107</td><td><div class="c3">11</div></td><td></td><td></td><td></td><td><div>28</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my $flags = $b_obj-&gt;FLAGS;</td></tr>
-<tr><td class="h">108</td><td><div class="c3">11</div></td><td><div class="c3" title="T/F"><a href="blib-lib-D-pm--branch.html#L108">100</a></div></td><td><div class="c0"><a href="blib-lib-D-pm--condition.html#L108">67</a></div></td><td></td><td><div>42</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;return $flags &amp; ( B::SVp_IOK | B::SVp_NOK ) &amp;&amp; !( $flags &amp; B::SVp_POK ) ? 1 : 0;</td></tr>
-<tr><td class="h">109</td><td></td><td></td><td></td><td></td><td></td><td class="s">}</td></tr>
-<tr><td class="h">110</td><td colspan="6"></td></tr><tr><td class="h">111</td><td></td><td></td><td></td><td></td><td></td><td class="s">1;</td></tr>
-<tr><td class="h">112</td><td colspan="6"></td></tr><tr><td class="h">113</td><td></td><td></td><td></td><td></td><td></td><td class="s">=encoding utf8</td></tr>
-<tr><td class="h">114</td><td colspan="6"></td></tr><tr><td class="h">115 - 198</td><td colspan="5"></td><td class="s"><pre>=head1 NAME
+<tr><td class="h">2</td><td colspan="6"></td></tr><tr><td class="h">3</td><td><div class="c3">3</div><div class="c3">3</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-D-pm--subroutine.html#L3">3</a></div></td><td><div>43681</div><div>7</div></td><td class="s">use 5.008007;</td></tr>
+<tr><td class="h">4</td><td><div class="c3">3</div><div class="c3">3</div><div class="c3">3</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-D-pm--subroutine.html#L4">3</a></div></td><td><div>8</div><div>3</div><div>46</div></td><td class="s">use strict;</td></tr>
+<tr><td class="h">5</td><td><div class="c3">3</div><div class="c3">3</div><div class="c3">3</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-D-pm--subroutine.html#L5">3</a></div></td><td><div>8</div><div>8</div><div>48</div></td><td class="s">use warnings;</td></tr>
+<tr><td class="h">6</td><td colspan="6"></td></tr><tr><td class="h">7</td><td><div class="c3">3</div><div class="c3">3</div><div class="c3">3</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-D-pm--subroutine.html#L7">3</a></div></td><td><div>970</div><div>10107</div><div>98</div></td><td class="s">use Data::Dumper;</td></tr>
+<tr><td class="h">8</td><td><div class="c3">3</div><div class="c3">3</div><div class="c3">3</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-D-pm--subroutine.html#L8">3</a></div></td><td><div>852</div><div>11458</div><div>35</div></td><td class="s">use Encode ();</td></tr>
+<tr><td class="h">9</td><td><div class="c3">3</div><div class="c3">3</div><div class="c3">3</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-D-pm--subroutine.html#L9">3</a></div></td><td><div>14</div><div>2</div><div>101</div></td><td class="s">use Carp &#39;carp&#39;;</td></tr>
+<tr><td class="h">10</td><td><div class="c3">3</div><div class="c3">3</div><div class="c3">3</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-D-pm--subroutine.html#L10">3</a></div></td><td><div>8</div><div>3</div><div>97</div></td><td class="s">use Scalar::Util qw(blessed refaddr);</td></tr>
+<tr><td class="h">11</td><td><div class="c3">3</div><div class="c3">3</div><div class="c3">3</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-D-pm--subroutine.html#L11">3</a></div></td><td><div>7</div><div>2</div><div>1059</div></td><td class="s">use B;</td></tr>
+<tr><td class="h">12</td><td colspan="6"></td></tr><tr><td class="h">13</td><td></td><td></td><td></td><td></td><td></td><td class="s">require Exporter;</td></tr>
+<tr><td class="h">14</td><td colspan="6"></td></tr><tr><td class="h">15</td><td></td><td></td><td></td><td></td><td></td><td class="s">our @ISA = qw(Exporter);</td></tr>
+<tr><td class="h">16</td><td colspan="6"></td></tr><tr><td class="h">17</td><td></td><td></td><td></td><td></td><td></td><td class="s">our @EXPORT = qw(du dw dn);</td></tr>
+<tr><td class="h">18</td><td colspan="6"></td></tr><tr><td class="h">19</td><td></td><td></td><td></td><td></td><td></td><td class="s">our $VERSION = &#39;0.01&#39;;</td></tr>
+<tr><td class="h">20</td><td colspan="6"></td></tr><tr><td class="h">21</td><td></td><td></td><td></td><td></td><td></td><td class="s">sub du {</td></tr>
+<tr><td class="h">22</td><td><div class="c3">4</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-D-pm--subroutine.html#L22">4</a></div></td><td><div>31756</div></td><td class="s">&nbsp;&nbsp;my ($ref_data) = @_;</td></tr>
+<tr><td class="h">23</td><td><div class="c3">4</div></td><td></td><td></td><td></td><td><div>8</div></td><td class="s">&nbsp;&nbsp;$ref_data = _encode(&#39;UTF-8&#39;, $ref_data);</td></tr>
+<tr><td class="h">24</td><td><div class="c3">4</div></td><td></td><td></td><td></td><td><div>17</div></td><td class="s">&nbsp;&nbsp;my $d = Data::Dumper-&gt;new([$ref_data]);</td></tr>
+<tr><td class="h">25</td><td><div class="c3">4</div></td><td></td><td></td><td></td><td><div>66</div></td><td class="s">&nbsp;&nbsp;$d-&gt;Sortkeys(1)-&gt;Indent(1)-&gt;Terse(1);</td></tr>
+<tr><td class="h">26</td><td><div class="c3">4</div></td><td></td><td></td><td></td><td><div>48</div></td><td class="s">&nbsp;&nbsp;my $ret = $d-&gt;Dump;</td></tr>
+<tr><td class="h">27</td><td><div class="c3">4</div></td><td></td><td></td><td></td><td><div>53</div></td><td class="s">&nbsp;&nbsp;chomp $ret;</td></tr>
+<tr><td class="h">28</td><td><div class="c3">4</div></td><td></td><td></td><td></td><td><div>175</div></td><td class="s">&nbsp;&nbsp;carp $ret;</td></tr>
+<tr><td class="h">29</td><td></td><td></td><td></td><td></td><td></td><td class="s">}</td></tr>
+<tr><td class="h">30</td><td colspan="6"></td></tr><tr><td class="h">31</td><td></td><td></td><td></td><td></td><td></td><td class="s">sub dw {</td></tr>
+<tr><td class="h">32</td><td><div class="c3">1</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-D-pm--subroutine.html#L32">1</a></div></td><td><div>916</div></td><td class="s">&nbsp;&nbsp;my ($ref_data) = @_;</td></tr>
+<tr><td class="h">33</td><td><div class="c3">1</div></td><td></td><td></td><td></td><td><div>2</div></td><td class="s">&nbsp;&nbsp;$ref_data = _encode(&quot;cp932&quot;,$ref_data);</td></tr>
+<tr><td class="h">34</td><td><div class="c3">1</div></td><td></td><td></td><td></td><td><div>7</div></td><td class="s">&nbsp;&nbsp;my $d = Data::Dumper-&gt;new([$ref_data]);</td></tr>
+<tr><td class="h">35</td><td><div class="c3">1</div></td><td></td><td></td><td></td><td><div>20</div></td><td class="s">&nbsp;&nbsp;$d-&gt;Sortkeys(1)-&gt;Indent(1)-&gt;Terse(1);</td></tr>
+<tr><td class="h">36</td><td><div class="c3">1</div></td><td></td><td></td><td></td><td><div>15</div></td><td class="s">&nbsp;&nbsp;my $ret = $d-&gt;Dump;</td></tr>
+<tr><td class="h">37</td><td><div class="c3">1</div></td><td></td><td></td><td></td><td><div>18</div></td><td class="s">&nbsp;&nbsp;chomp $ret;</td></tr>
+<tr><td class="h">38</td><td><div class="c3">1</div></td><td></td><td></td><td></td><td><div>61</div></td><td class="s">&nbsp;&nbsp;carp $ret;</td></tr>
+<tr><td class="h">39</td><td></td><td></td><td></td><td></td><td></td><td class="s">}</td></tr>
+<tr><td class="h">40</td><td colspan="6"></td></tr><tr><td class="h">41</td><td></td><td></td><td></td><td></td><td></td><td class="s">sub dn {</td></tr>
+<tr><td class="h">42</td><td><div class="c3">3</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-D-pm--subroutine.html#L42">3</a></div></td><td><div>1433</div></td><td class="s">&nbsp;&nbsp;my ($ref_data) = @_;</td></tr>
+<tr><td class="h">43</td><td><div class="c3">3</div></td><td></td><td></td><td></td><td><div>7</div></td><td class="s">&nbsp;&nbsp;my $d = Data::Dumper-&gt;new([$ref_data]);</td></tr>
+<tr><td class="h">44</td><td><div class="c3">3</div></td><td></td><td></td><td></td><td><div>46</div></td><td class="s">&nbsp;&nbsp;$d-&gt;Sortkeys(1)-&gt;Indent(1)-&gt;Terse(1);</td></tr>
+<tr><td class="h">45</td><td><div class="c3">3</div></td><td></td><td></td><td></td><td><div>34</div></td><td class="s">&nbsp;&nbsp;my $ret = $d-&gt;Dump;</td></tr>
+<tr><td class="h">46</td><td><div class="c3">3</div></td><td></td><td></td><td></td><td><div>41</div></td><td class="s">&nbsp;&nbsp;chomp $ret;</td></tr>
+<tr><td class="h">47</td><td><div class="c3">3</div></td><td></td><td></td><td></td><td><div>118</div></td><td class="s">&nbsp;&nbsp;carp $ret;</td></tr>
+<tr><td class="h">48</td><td></td><td></td><td></td><td></td><td></td><td class="s">}</td></tr>
+<tr><td class="h">49</td><td colspan="6"></td></tr><tr><td class="h">50</td><td></td><td></td><td></td><td></td><td></td><td class="s"># Copy from Data::Recursive::Encode</td></tr>
+<tr><td class="h">51</td><td></td><td></td><td></td><td></td><td></td><td class="s">our $DO_NOT_PROCESS_NUMERIC_VALUE = 0;</td></tr>
+<tr><td class="h">52</td><td></td><td></td><td></td><td></td><td></td><td class="s">sub _apply {</td></tr>
+<tr><td class="h">53</td><td><div class="c3">9</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-D-pm--subroutine.html#L53">9</a></div></td><td><div>7</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my $code = shift;</td></tr>
+<tr><td class="h">54</td><td><div class="c3">9</div></td><td></td><td></td><td></td><td><div>5</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my $seen = shift;</td></tr>
+<tr><td class="h">55</td><td colspan="6"></td></tr><tr><td class="h">56</td><td><div class="c3">9</div></td><td></td><td></td><td></td><td><div>8</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my @retval;</td></tr>
+<tr><td class="h">57</td><td><div class="c3">9</div></td><td></td><td></td><td></td><td><div>9</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;for my $arg (@_) {</td></tr>
+<tr><td class="h">58</td><td><div class="c3">16</div></td><td><div class="c3" title="T/F"><a href="blib-lib-D-pm--branch.html#L58">100</a></div></td><td></td><td></td><td><div>17</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(my $ref = ref $arg){</td></tr>
+<tr><td class="h">59</td><td><div class="c3">5</div></td><td></td><td></td><td></td><td><div>7</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;my $refaddr = refaddr($arg);</td></tr>
+<tr><td class="h">60</td><td><div class="c3">5</div></td><td></td><td></td><td></td><td><div>5</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;my $proto;</td></tr>
+<tr><td class="h">61</td><td colspan="6"></td></tr><tr><td class="h">62</td><td><div class="c3">5</div></td><td><div class="c0" title="-/F"><a href="blib-lib-D-pm--branch.html#L62">50</a></div><div class="c3" title="T/F"><a href="blib-lib-D-pm--branch.html#L62">100</a></div><div class="c3" title="T/F"><a href="blib-lib-D-pm--branch.html#L62">100</a></div><div class="c3" title="T/F"><a href="blib-lib-D-pm--branch.html#L62">100</a></div></td><td><div class="c0"><a href="blib-lib-D-pm--condition.html#L62">67</a></div></td><td></td><td><div>16</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(defined($proto = $seen-&gt;{$refaddr})){</td></tr>
+<tr><td class="h">63</td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# noop</td></tr>
+<tr><td class="h">64</td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
+<tr><td class="h">65</td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elsif($ref eq &#39;ARRAY&#39;){</td></tr>
+<tr><td class="h">66</td><td><div class="c3">1</div></td><td></td><td></td><td></td><td><div>2</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$proto = $seen-&gt;{$refaddr} = [];</td></tr>
+<tr><td class="h">67</td><td><div class="c3">1</div><div class="c3">1</div><div class="c3">1</div></td><td></td><td></td><td></td><td><div>1</div><div>2</div><div>2</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{$proto} = _apply($code, $seen, @{$arg});</td></tr>
+<tr><td class="h">68</td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
+<tr><td class="h">69</td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elsif($ref eq &#39;HASH&#39;){</td></tr>
+<tr><td class="h">70</td><td><div class="c3">2</div></td><td></td><td></td><td></td><td><div>3</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$proto = $seen-&gt;{$refaddr} = {};</td></tr>
+<tr><td class="h">71</td><td><div class="c3">2</div><div class="c3">2</div><div class="c3">2</div></td><td></td><td></td><td></td><td><div>3</div><div>4</div><div>5</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%{$proto} = _apply($code, $seen, %{$arg});</td></tr>
+<tr><td class="h">72</td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
+<tr><td class="h">73</td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elsif($ref eq &#39;REF&#39; or $ref eq &#39;SCALAR&#39;){</td></tr>
+<tr><td class="h">74</td><td><div class="c3">1</div><div class="c3">1</div></td><td></td><td></td><td></td><td><div>1</div><div>1</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$proto = $seen-&gt;{$refaddr} = \do{ my $scalar };</td></tr>
+<tr><td class="h">75</td><td><div class="c3">1</div><div class="c3">1</div><div class="c3">1</div></td><td></td><td></td><td></td><td><div>1</div><div>1</div><div>2</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${$proto} = _apply($code, $seen, ${$arg});</td></tr>
+<tr><td class="h">76</td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
+<tr><td class="h">77</td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else{ # CODE, GLOB, IO, LVALUE etc.</td></tr>
+<tr><td class="h">78</td><td><div class="c3">1</div></td><td></td><td></td><td></td><td><div>2</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$proto = $seen-&gt;{$refaddr} = $arg;</td></tr>
+<tr><td class="h">79</td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
+<tr><td class="h">80</td><td colspan="6"></td></tr><tr><td class="h">81</td><td><div class="c3">5</div></td><td></td><td></td><td></td><td><div>6</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;push @retval, $proto;</td></tr>
+<tr><td class="h">82</td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
+<tr><td class="h">83</td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else{</td></tr>
+<tr><td class="h">84</td><td><div class="c3">11</div></td><td><div class="c0" title="T/-"><a href="blib-lib-D-pm--branch.html#L84">50</a></div></td><td><div class="c0"><a href="blib-lib-D-pm--condition.html#L84">33</a></div></td><td></td><td><div>27</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;push @retval, defined($arg) &amp;&amp; (! $DO_NOT_PROCESS_NUMERIC_VALUE || ! _is_number($arg)) ? $code-&gt;($arg) : $arg;</td></tr>
+<tr><td class="h">85</td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
+<tr><td class="h">86</td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
+<tr><td class="h">87</td><td colspan="6"></td></tr><tr><td class="h">88</td><td><div class="c3">9</div></td><td><div class="c3" title="T/F"><a href="blib-lib-D-pm--branch.html#L88">100</a></div></td><td></td><td></td><td><div>19</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;return wantarray ? @retval : $retval[0];</td></tr>
+<tr><td class="h">89</td><td></td><td></td><td></td><td></td><td></td><td class="s">}</td></tr>
+<tr><td class="h">90</td><td colspan="6"></td></tr><tr><td class="h">91</td><td></td><td></td><td></td><td></td><td></td><td class="s"># Copy from Data::Recursive::Encode</td></tr>
+<tr><td class="h">92</td><td></td><td></td><td></td><td></td><td></td><td class="s">sub _encode {</td></tr>
+<tr><td class="h">93</td><td><div class="c3">5</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-D-pm--subroutine.html#L93">5</a></div></td><td><div>6</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my ($encoding, $stuff, $check) = @_;</td></tr>
+<tr><td class="h">94</td><td><div class="c3">5</div></td><td></td><td><div class="c0"><a href="blib-lib-D-pm--condition.html#L94">33</a></div></td><td></td><td><div>9</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;$encoding = Encode::find_encoding($encoding)</td></tr>
+<tr><td class="h">95</td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|| Carp::croak(&quot;unknown encoding &#39;$encoding&#39;&quot;);</td></tr>
+<tr><td class="h">96</td><td><div class="c3">5</div></td><td></td><td><div class="c0"><a href="blib-lib-D-pm--condition.html#L96">50</a></div></td><td></td><td><div>3656</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;$check ||= 0;</td></tr>
+<tr><td class="h">97</td><td><div class="c3">5</div><div class="c3">11</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-D-pm--subroutine.html#L97">11</a></div></td><td><div>13</div><div>31</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;_apply(sub { $encoding-&gt;encode($_[0], $check) }, {}, $stuff);</td></tr>
+<tr><td class="h">98</td><td></td><td></td><td></td><td></td><td></td><td class="s">}</td></tr>
+<tr><td class="h">99</td><td colspan="6"></td></tr><tr><td class="h">100</td><td></td><td></td><td></td><td></td><td></td><td class="s"># Copy from Data::Recursive::Encode</td></tr>
+<tr><td class="h">101</td><td></td><td></td><td></td><td></td><td></td><td class="s">sub _is_number {</td></tr>
+<tr><td class="h">102</td><td><div class="c3">12</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-D-pm--subroutine.html#L102">12</a></div></td><td><div>45660</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my $value = shift;</td></tr>
+<tr><td class="h">103</td><td><div class="c3">12</div></td><td><div class="c3" title="T/F"><a href="blib-lib-D-pm--branch.html#L103">100</a></div></td><td></td><td></td><td><div>37</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;return 0 unless defined $value;</td></tr>
+<tr><td class="h">104</td><td colspan="6"></td></tr><tr><td class="h">105</td><td><div class="c3">11</div></td><td></td><td></td><td></td><td><div>31</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my $b_obj = B::svref_2object(\$value);</td></tr>
+<tr><td class="h">106</td><td><div class="c3">11</div></td><td></td><td></td><td></td><td><div>31</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my $flags = $b_obj-&gt;FLAGS;</td></tr>
+<tr><td class="h">107</td><td><div class="c3">11</div></td><td><div class="c3" title="T/F"><a href="blib-lib-D-pm--branch.html#L107">100</a></div></td><td><div class="c0"><a href="blib-lib-D-pm--condition.html#L107">67</a></div></td><td></td><td><div>60</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;return $flags &amp; ( B::SVp_IOK | B::SVp_NOK ) &amp;&amp; !( $flags &amp; B::SVp_POK ) ? 1 : 0;</td></tr>
+<tr><td class="h">108</td><td></td><td></td><td></td><td></td><td></td><td class="s">}</td></tr>
+<tr><td class="h">109</td><td colspan="6"></td></tr><tr><td class="h">110</td><td></td><td></td><td></td><td></td><td></td><td class="s">1;</td></tr>
+<tr><td class="h">111</td><td colspan="6"></td></tr><tr><td class="h">112</td><td></td><td></td><td></td><td></td><td></td><td class="s">=encoding utf8</td></tr>
+<tr><td class="h">113</td><td colspan="6"></td></tr><tr><td class="h">114 - 215</td><td colspan="5"></td><td class="s"><pre>=head1 NAME
 
 D - Provides utility functions to encode data and dump it to STDERR.
 
@@ -132,11 +132,14 @@ D - Provides utility functions to encode data and dump it to STDERR.
 &nbsp;&nbsp;# Reference data that contains decoded strings
 &nbsp;&nbsp;my $data = [{name =&gt; &#39;&atilde;&#129;&#130;&#39;}, {name =&gt; &#39;&atilde;&#129;&#132;&#39;}];
 &nbsp;&nbsp;
-&nbsp;&nbsp;# Encode all strings to UTF-8 in data and dump it to STDERR using warn function and Data::Dumper.
+&nbsp;&nbsp;# Encode all strings in reference data to UTF-8 and dump the reference data to STDERR
 &nbsp;&nbsp;du $data;
 &nbsp;&nbsp;
-&nbsp;&nbsp;# Encode all strings to cp932 in data and dump it to STDERR using warn function and Data::Dumper.
+&nbsp;&nbsp;# Encode all strings in reference data to cp932 and dump the reference data.
 &nbsp;&nbsp;dw $data;
+
+&nbsp;&nbsp;# Dump reference data to STDERR without encoding.
+&nbsp;&nbsp;dn $data;
 
 =head1 DESCRIPTION
 
@@ -146,25 +149,31 @@ D module provides utility functions to encode data and dump it to STDERR.
 
 =over 2
 
-=item * Export C&lt;du&gt; and C&lt;dw&gt; functions. These function names are consist of two characters. Don&#39;t conflict debug command &#39;p&#39;.
+=item * Export C&lt;du&gt; and C&lt;dw&gt; and C&lt;dn&gt; functions. Don&#39;t conflict debug command such as &#39;p&#39; because these function names are consist of two characters.
+
+=item * Encode all strings in reference data in C&lt;du&gt; and C&lt;dw&gt; function.
 
 =item * C&lt;du&gt; is a short name of &quot;dump UTF-8&quot;
 
 =item * C&lt;dw&gt; is a short name of &quot;dump Windows cp932&quot;
 
-=item * Can wirte dump operation by onliner: useD;du $data; useD;dw $data;
+=item * C&lt;dn&gt; is a short name of &quot;dump no encoding&quot;
 
-=item * Encode all strings in reference data
+=item * Onliner is useful. &quot;useD;du $data;&quot; or &quot;useD;dw $data;&quot; or &quot;useD;dn $data;&quot;
 
-=item * Use Data::Dumper::Dumper function to dump data
+=item * Use C&lt;Dump&gt; method of L&lt;Data::Dumper&gt; to dump data
 
-=item * Use warn function to print STDERR
+=item * Print line number and file name using C&lt;carp&gt; function of L&lt;Carp&gt;
+
+=item * Keys of hash of dumped data is sorted.
+
+=item * Don&#39;t print &quot;$VAR1 =&quot; unlike L&lt;Data::Dumper&gt; default.
 
 =back
 
 =head1 EXPORT
 
-Export C&lt;du&gt; and C&lt;dw&gt; functions.
+Export C&lt;du&gt; and C&lt;dw&gt; and C&lt;dn&gt; functions.
 
 =head1 FUNCTIONS
 
@@ -172,11 +181,21 @@ Export C&lt;du&gt; and C&lt;dw&gt; functions.
 
 &nbsp;&nbsp;du $data;
 
-Encode all strings in reference data to UTF-8 and dump it to STDERR using warn function and L&lt;Data::Dumper&gt;.
+Encode all strings in reference data to UTF-8 and dump the reference data to STDERR using C&lt;carp&gt; function of L&lt;Carp&gt; and C&lt;Dump&gt; method of L&lt;Data::Dumper&gt;.
+
+If the argument is not reference data such as a string, it is also dumped in the same way as reference data.
 
 =head2 dw
 
-Encode all strings in reference data to cp932 and dump it to STDERR using warn function and L&lt;Data::Dumper&gt;.
+Encode all strings in reference data to cp932 and dump the reference data to STDERR using C&lt;carp&gt; function of L&lt;Carp&gt; and C&lt;Dump&gt; method of L&lt;Data::Dumper&gt;.
+
+If the argument is not reference data such as a string, it is also dumped in the same way as reference data.
+
+=head2 dn
+
+Dump reference data to STDERR without encoding using C&lt;carp&gt; function of L&lt;Carp&gt; and C&lt;Dump&gt; method of L&lt;Data::Dumper&gt;.
+
+If the argument is not reference data such as a string, it is also dumped in the same way as reference data.
 
 =head1 Bug Report
 
@@ -184,7 +203,7 @@ L&lt;https://github.com/YoshiyukiItoh/D&gt;
 
 =head1 SEE ALSO
 
-L&lt;Data::Dumper&gt;, L&lt;Data::Recursive::Encode&gt;
+L&lt;Data::Dumper&gt;, L&lt;Carp&gt;, L&lt;Data::Recursive::Encode&gt;
 
 =head1 AUTHOR
 
@@ -199,7 +218,6 @@ Copyright (C) 2019 by yoshi, Yuki Kimoto
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.08.7 or,
 at your option, any later version of Perl 5 you may have available.
-
 
 =cut</pre></td></tr>
 </table>
