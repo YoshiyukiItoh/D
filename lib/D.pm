@@ -6,7 +6,7 @@ use warnings;
 
 use Data::Dumper;
 use Encode ();
-use Carp 'carp';
+use Carp ();
 use Scalar::Util qw(blessed refaddr);
 use B;
 
@@ -25,7 +25,8 @@ sub du {
   $d->Sortkeys(1)->Indent(1)->Terse(1);
   my $ret = $d->Dump;
   chomp $ret;
-  carp $ret;
+  my $carp_short_message = Carp::shortmess($ret);
+  print STDERR $carp_short_message;
 }
 
 sub dw {
@@ -35,7 +36,8 @@ sub dw {
   $d->Sortkeys(1)->Indent(1)->Terse(1);
   my $ret = $d->Dump;
   chomp $ret;
-  carp $ret;
+  my $carp_short_message = Carp::shortmess($ret);
+  print STDERR $carp_short_message;
 }
 
 sub dn {
@@ -44,7 +46,8 @@ sub dn {
   $d->Sortkeys(1)->Indent(1)->Terse(1);
   my $ret = $d->Dump;
   chomp $ret;
-  carp $ret;
+  my $carp_short_message = Carp::shortmess($ret);
+  print STDERR $carp_short_message;
 }
 
 # Copy from Data::Recursive::Encode
@@ -156,7 +159,7 @@ D module provides utility functions to encode data and dump it to STDERR.
 
 =item * Use C<Dump> method of L<Data::Dumper> to dump data
 
-=item * Print line number and file name using C<carp> function of L<Carp>
+=item * Print line number and file name to STDERR
 
 =item * Keys of hash of dumped data is sorted.
 
@@ -174,19 +177,19 @@ Export C<du> and C<dw> and C<dn> functions.
 
   du $data;
 
-Encode all strings in reference data to UTF-8 and dump the reference data to STDERR using C<carp> function of L<Carp> and C<Dump> method of L<Data::Dumper>.
+Encode all strings in reference data to UTF-8 and dump the reference data to STDERR with file name and line number.
 
 If the argument is not reference data such as a string, it is also dumped in the same way as reference data.
 
 =head2 dw
 
-Encode all strings in reference data to cp932 and dump the reference data to STDERR using C<carp> function of L<Carp> and C<Dump> method of L<Data::Dumper>.
+Encode all strings in reference data to cp932 and dump the reference data to STDERR with file name and line number.
 
 If the argument is not reference data such as a string, it is also dumped in the same way as reference data.
 
 =head2 dn
 
-Dump reference data to STDERR without encoding using C<carp> function of L<Carp> and C<Dump> method of L<Data::Dumper>.
+Dump reference data to STDERR without encoding with file name and line number.
 
 If the argument is not reference data such as a string, it is also dumped in the same way as reference data.
 

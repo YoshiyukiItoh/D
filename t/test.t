@@ -17,16 +17,24 @@ use D;
   };
 
   my $output;
-  local $SIG{__WARN__} = sub {
-    $output = shift;
-  };
+  
+  # Start capture STDERR
+  open my $temp, '>&', STDERR;
+  close STDERR;
+  open STDERR, '>', \$output;
 
-  du($ref_data1);
+  du($ref_data1); my $line = __LINE__;
+
+  # End capture STDERR
+  close STDERR;
+  open STDERR, '>&', $temp;
+  close $temp;
+
   my $em1 = encode("UTF-8",'あいう');
   my $em2 = encode("UTF-8",'アイウ');
   like( $output, qr/\s\s\'hira\'\s=>\s\'$em1\',/);
   like( $output, qr/\s\s\'kana\'\s=>\s\'$em2\'/);
-  like( $output, qr/}\sat\st\/test\.t\sline 24./); # } at t/test.t line 24.
+  like( $output, qr/}\sat\st\/test\.t\sline $line./); # } at t/test.t line 24.
 }
 
 # run dw() test
@@ -37,16 +45,24 @@ use D;
   };
 
   my $output;
-  local $SIG{__WARN__} = sub {
-    $output = shift;
-  };
+  
+  # Start capture STDERR
+  open my $temp, '>&', STDERR;
+  close STDERR;
+  open STDERR, '>', \$output;
 
-  dw($ref_data2);
+  dw($ref_data2); my $line = __LINE__;
+
+  # End capture STDERR
+  close STDERR;
+  open STDERR, '>&', $temp;
+  close $temp;
+
   my $em1 = encode("cp932",'あいう');
   my $em2 = encode("cp932",'アイウ');
   like( $output, qr/\s\s\'hira\'\s=>\s\'$em1\',/);
   like( $output, qr/\s\s\'kana\'\s=>\s\'$em2\'/);
-  like( $output, qr/}\sat\st\/test\.t\sline 44./); # } at t/test.t line 44.
+  like( $output, qr/}\sat\st\/test\.t\sline $line./); # } at t/test.t line 44.
 }
 
 # run dn() test
@@ -57,16 +73,24 @@ use D;
   };
 
   my $output;
-  local $SIG{__WARN__} = sub {
-    $output = shift;
-  };
+  
+  # Start capture STDERR
+  open my $temp, '>&', STDERR;
+  close STDERR;
+  open STDERR, '>', \$output;
 
-  dn($ref_data3);
+  dn($ref_data3); my $line = __LINE__;
+
+  # End capture STDERR
+  close STDERR;
+  open STDERR, '>&', $temp;
+  close $temp;
+
   my $em1 = encode("UTF-8",'あいう');
   my $em2 = encode("UTF-8",'アイウ');
   like( $output, qr/\s\s\'hira\'\s=>\s\'$em1\',/);
   like( $output, qr/\s\s\'kana\'\s=>\s\'$em2\'/);
-  like( $output, qr/}\sat\st\/test\.t\sline 64./); # } at t/test.t line 64.
+  like( $output, qr/}\sat\st\/test\.t\sline $line./); # } at t/test.t line 64.
 }
 
 # run du test (array reference)
@@ -74,16 +98,24 @@ use D;
   my $ref_data4 = ["あいう", "アイウ"];
 
   my $output;
-  local $SIG{__WARN__} = sub {
-    $output = shift;
-  };
+  
+  # Start capture STDERR
+  open my $temp, '>&', STDERR;
+  close STDERR;
+  open STDERR, '>', \$output;
 
-  du($ref_data4);
+  du($ref_data4); my $line = __LINE__;
+
+  # End capture STDERR
+  close STDERR;
+  open STDERR, '>&', $temp;
+  close $temp;
+
   my $em1 = encode("UTF-8",'あいう');
   my $em2 = encode("UTF-8",'アイウ');
   like( $output, qr/\s\s\'$em1\',/);
   like( $output, qr/\s\s\'$em2\'/);
-  like( $output, qr/]\sat\st\/test\.t\sline 81./); # ] at t/test.t line 81.
+  like( $output, qr/]\sat\st\/test\.t\sline $line./); # ] at t/test.t line 81.
 }
 
 # run scalar reference test
@@ -91,13 +123,21 @@ use D;
   my $tdata1 = 'あいう';
 
   my $output;
-  local $SIG{__WARN__} = sub {
-    $output = shift;
-  };
+  
+  # Start capture STDERR
+  open my $temp, '>&', STDERR;
+  close STDERR;
+  open STDERR, '>', \$output;
 
-  du(\$tdata1);
+  du(\$tdata1); my $line = __LINE__;
+
+  # End capture STDERR
+  close STDERR;
+  open STDERR, '>&', $temp;
+  close $temp;
+
   my $em1 = encode("UTF-8",'あいう');
-  like( $output, qr/^\\\'$em1\'\sat\st\/test\.t\sline 98./); # \'あいう' at t/test.t line 98.
+  like( $output, qr/^\\\'$em1\'\sat\st\/test\.t\sline $line./); # \'あいう' at t/test.t line 98.
 }
 
 # run code reference test
@@ -107,23 +147,38 @@ use D;
   };
 
   my $output;
-  local $SIG{__WARN__} = sub {
-    $output = shift;
-  };
+  
+  # Start capture STDERR
+  open my $temp, '>&', STDERR;
+  close STDERR;
+  open STDERR, '>', \$output;
 
-  du($code_ref);
-  like( $output, qr/^sub { "DUMMY" }\sat\st\/test\.t\sline 114./);
+  du($code_ref); my $line = __LINE__;
+
+  # End capture STDERR
+  close STDERR;
+  open STDERR, '>&', $temp;
+  close $temp;
+
+  like( $output, qr/^sub { "DUMMY" }\sat\st\/test\.t\sline $line./);
 }
 
 {
   my $ref_data5 = { int => 1 };
 
   my $output;
-  local $SIG{__WARN__} = sub {
-    $output = shift;
-  };
+  
+  # Start capture STDERR
+  open my $temp, '>&', STDERR;
+  close STDERR;
+  open STDERR, '>', \$output;
 
   dn($ref_data5);
+
+  # End capture STDERR
+  close STDERR;
+  open STDERR, '>&', $temp;
+  close $temp;
 
   like( $output, qr/\s\s\'int\'\s=>\s1/);
 }
@@ -133,11 +188,18 @@ use D;
   local $D::DO_NOT_PROCESS_NUMERIC_VALUE = 1;
 
   my $output;
-  local $SIG{__WARN__} = sub {
-    $output = shift;
-  };
+  
+  # Start capture STDERR
+  open my $temp, '>&', STDERR;
+  close STDERR;
+  open STDERR, '>', \$output;
 
   dn($ref_data6);
+
+  # End capture STDERR
+  close STDERR;
+  open STDERR, '>&', $temp;
+  close $temp;
 
   like( $output, qr/\s\s\'int\'\s=>\s1/);
 }
