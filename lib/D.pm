@@ -16,7 +16,7 @@ our @ISA = qw(Exporter);
 
 our @EXPORT = qw(du dw dn);
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 sub du {
   my ($ref_data) = @_;
