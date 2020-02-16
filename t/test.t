@@ -160,7 +160,7 @@ use D;
   open STDERR, '>&', $temp;
   close $temp;
 
-  like( $output, qr/^sub { "DUMMY" }\sat\st\/test\.t\sline $line./);
+  like( $output, qr/^sub\s\{\s"DUMMY"\s\}\sat\st\/test\.t\sline $line./);
 }
 
 {
