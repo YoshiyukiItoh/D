@@ -34,7 +34,7 @@ use D;
   my $em2 = encode("UTF-8",'アイウ');
   like( $output, qr/\s\s\'hira\'\s=>\s\'$em1\',/);
   like( $output, qr/\s\s\'kana\'\s=>\s\'$em2\'/);
-  like( $output, qr/}\sat\st\/test\.t\sline $line./); # } at t/test.t line 24.
+  like( $output, qr/}\sat\st\/test\.t\sline $line/); # } at t/test.t line 24
 }
 
 # run dw() test
@@ -62,7 +62,7 @@ use D;
   my $em2 = encode("cp932",'アイウ');
   like( $output, qr/\s\s\'hira\'\s=>\s\'$em1\',/);
   like( $output, qr/\s\s\'kana\'\s=>\s\'$em2\'/);
-  like( $output, qr/}\sat\st\/test\.t\sline $line./); # } at t/test.t line 44.
+  like( $output, qr/}\sat\st\/test\.t\sline $line/); # } at t/test.t line 44
 }
 
 # run dn() test
@@ -90,7 +90,7 @@ use D;
   my $em2 = encode("UTF-8",'アイウ');
   like( $output, qr/\s\s\'hira\'\s=>\s\'$em1\',/);
   like( $output, qr/\s\s\'kana\'\s=>\s\'$em2\'/);
-  like( $output, qr/}\sat\st\/test\.t\sline $line./); # } at t/test.t line 64.
+  like( $output, qr/}\sat\st\/test\.t\sline $line/); # } at t/test.t line 64
 }
 
 # run du test (array reference)
@@ -115,7 +115,7 @@ use D;
   my $em2 = encode("UTF-8",'アイウ');
   like( $output, qr/\s\s\'$em1\',/);
   like( $output, qr/\s\s\'$em2\'/);
-  like( $output, qr/]\sat\st\/test\.t\sline $line./); # ] at t/test.t line 81.
+  like( $output, qr/]\sat\st\/test\.t\sline $line/); # ] at t/test.t line 81
 }
 
 # run scalar reference test
@@ -137,7 +137,7 @@ use D;
   close $temp;
 
   my $em1 = encode("UTF-8",'あいう');
-  like( $output, qr/^\\\'$em1\'\sat\st\/test\.t\sline $line./); # \'あいう' at t/test.t line 98.
+  like( $output, qr/^\\\'$em1\'\sat\st\/test\.t\sline $line/); # \'あいう' at t/test.t line 98
 }
 
 # run code reference test
@@ -160,7 +160,7 @@ use D;
   open STDERR, '>&', $temp;
   close $temp;
 
-  like( $output, qr/^sub\s\{\s"DUMMY"\s\}\sat\st\/test\.t\sline $line./);
+  like( $output, qr/^sub\s\{\s"DUMMY"\s\}\sat\st\/test\.t\sline $line/);
 }
 
 {
