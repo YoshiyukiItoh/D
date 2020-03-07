@@ -180,8 +180,6 @@ Export C<du> and C<dw> and C<dn> functions.
 
 =head2 du
 
-  du $data;
-
 Encode all strings in reference data to UTF-8 and dump the reference data to STDERR with file name and line number.
 
 If the argument is not reference data such as a string, it is also dumped in the same way as reference data.
@@ -208,13 +206,13 @@ L<Data::Dumper>, L<Carp>, L<Data::Recursive::Encode>
 
 =head1 AUTHOR
 
-yoshiyuki ito, E<lt>yoshiyuki.ito.biz@gmail.comE<gt>
+Yoshiyuki Ito, E<lt>yoshiyuki.ito.biz@gmail.comE<gt>
 
 Yuki Kimoto, E<lt>kimoto.yuki@gmail.comE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2019 by yoshi, Yuki Kimoto
+Copyright (C) 2019 by Yoshiyuki Ito, Yuki Kimoto
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.08.7 or,
