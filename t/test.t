@@ -59,7 +59,6 @@ use D;
   like( $retstr, qr/\Q$re3/);
 }
 
-
 # run dw() test
 {
   my $ref_data2 = {
@@ -89,6 +88,25 @@ use D;
   like( $output, qr/\Q$re1/);
   like( $output, qr/\Q$re2/);
   like( $output, qr/\Q$re3/);
+}
+
+# run dwstr() call test
+{
+  my $ref_data2 = {
+    hira=>"あいう",
+    kana=>"アイウ"
+  };
+
+  my $retstr = dwstr($ref_data2); my $line = __LINE__;
+
+  my $em1 = encode("cp932",'あいう');
+  my $em2 = encode("cp932",'アイウ');
+  my $re1 = "  'hira' => '$em1',";
+  my $re2 = "  'kana' => '$em2'";
+  my $re3 = "} at t/test.t line $line";
+  like( $retstr, qr/\Q$re1/);
+  like( $retstr, qr/\Q$re2/);
+  like( $retstr, qr/\Q$re3/);
 }
 
 # run dn() test
