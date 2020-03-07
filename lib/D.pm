@@ -14,11 +14,15 @@ require Exporter;
 
 our @ISA = qw(Exporter);
 
-our @EXPORT = qw(du dw dn);
+our @EXPORT = qw(du dw dn dustr);
 
 our $VERSION = '0.03';
 
 sub du {
+  print STDERR dustr(@_);
+}
+
+sub dustr {
   my ($ref_data) = @_;
   $ref_data = _encode('UTF-8', $ref_data);
   my $d = Data::Dumper->new([$ref_data]);
@@ -26,7 +30,8 @@ sub du {
   my $ret = $d->Dump;
   chomp $ret;
   my $carp_short_message = Carp::shortmess($ret);
-  print STDERR $carp_short_message;
+
+  return $carp_short_message;
 }
 
 sub dw {
