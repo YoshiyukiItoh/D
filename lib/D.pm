@@ -14,7 +14,7 @@ require Exporter;
 
 our @ISA = qw(Exporter);
 
-our @EXPORT = qw(du dw dn dustr);
+our @EXPORT = qw(du dw dn dustr dwstr);
 
 our $VERSION = '0.03';
 
@@ -35,6 +35,10 @@ sub dustr {
 }
 
 sub dw {
+  print STDERR dwstr(@_);
+}
+
+sub dwstr {
   my ($ref_data) = @_;
   $ref_data = _encode("cp932",$ref_data);
   my $d = Data::Dumper->new([$ref_data]);
@@ -42,7 +46,8 @@ sub dw {
   my $ret = $d->Dump;
   chomp $ret;
   my $carp_short_message = Carp::shortmess($ret);
-  print STDERR $carp_short_message;
+
+  return $carp_short_message;
 }
 
 sub dn {
