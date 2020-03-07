@@ -14,7 +14,7 @@ require Exporter;
 
 our @ISA = qw(Exporter);
 
-our @EXPORT = qw(du dw dn dustr dwstr);
+our @EXPORT = qw(du dw dn dustr dwstr dnstr);
 
 our $VERSION = '0.03';
 
@@ -51,13 +51,18 @@ sub dwstr {
 }
 
 sub dn {
+  print STDERR dnstr(@_);
+}
+
+sub dnstr {
   my ($ref_data) = @_;
   my $d = Data::Dumper->new([$ref_data]);
   $d->Sortkeys(1)->Indent(1)->Terse(1);
   my $ret = $d->Dump;
   chomp $ret;
   my $carp_short_message = Carp::shortmess($ret);
-  print STDERR $carp_short_message;
+
+  return $carp_short_message;
 }
 
 # Copy from Data::Recursive::Encode
