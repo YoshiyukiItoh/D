@@ -204,12 +204,25 @@ Encode all strings in reference data to UTF-8 and return string the reference da
 If the argument is not reference data such as a string, it is also dumped in the same way as reference data.
 This function is exported.
 
+  use D;
+  my $data = [{name => 'あ'}, {name => 'い'}];
+  du $data;
+
+Following example is oneliner used. It can be used all functions.
+
+  my $data = [{name => 'あ'}, {name => 'い'}];
+  use D; du $data;
+
 =head2 dw
 
 Encode all strings in reference data to cp932 and dump the reference data to STDERR with file name and line number.
 
 If the argument is not reference data such as a string, it is also dumped in the same way as reference data.
 This function is exported.
+
+  use D;
+  my $data = [{name => 'あ'}, {name => 'い'}];
+  dw $data;
 
 =head2 dn
 
@@ -218,20 +231,42 @@ Dump reference data to STDERR without encoding with file name and line number.
 If the argument is not reference data such as a string, it is also dumped in the same way as reference data.
 This function is exported.
 
+  use D;
+  my $data = [{name => 'あ'}, {name => 'い'}];
+  dn $data;
+
 =head2 dustr
 
-This function is used by du function.
+This function is called by du function.
 This function is exported.
+
+Following example is print the UTF-8 encoded data to STDOUT.
+
+  use D;
+  my $data = [{name => 'あ'}, {name => 'い'}];
+  print dustr $data;
 
 =head2 dwstr
 
-This function is used by dw function.
+This function is called by dw function.
 This function is exported.
+
+Following example is print the cp932 encoded data to STDOUT.
+
+  use D;
+  my $data = [{name => 'あ'}, {name => 'い'}];
+  print dwstr $data;
 
 =head2 dnstr
 
-This function is used by dn function.
+This function is called by dn function.
 This function is exported.
+
+Following example is print the without encoded data to STDOUT.
+
+  use D;
+  my $data = [{name => 'あ'}, {name => 'い'}];
+  print dnstr $data;
 
 =head1 Bug Report
 
