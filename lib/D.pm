@@ -143,23 +143,29 @@ D - Provides utility functions to encode data and dump it to STDERR.
   # Reference data that contains decoded strings
   my $data = [{name => 'あ'}, {name => 'い'}];
   
-  # Encode all strings in reference data to UTF-8 and return string the reference data.
-  my $str = dustr $data;
-
-  # Encode all strings in reference data to cp932 and return string the reference data.
-  my $str = dwstr $data;
-
-  # Return string the reference data to without encoding.
-  my $str = dnstr $data;
-
-  # Dump the result of dustr function to STDERR.
+  # Encode all strings in reference data to UTF-8 and dump the reference data to STDERR.
   du $data;
-  
-  # Dump the result of dwstr function to STDERR.
+
+  # Encode all strings in reference data to cp932 and dump the reference data to STDERR.
   dw $data;
 
-  # Dump the result of dnstr function to STDERR.
+  # Dump reference data to STDERR without encoding.
   dn $data;
+
+  # Examples of useful oneliner.
+  use D; du $data;
+  use D; dw $data;
+  use D; dn $data;
+
+  # Output example of du function.
+  [
+    {
+      'name' => 'あ'
+    },
+    {
+      'name' => 'い'
+    }
+  ] at test.pl line 7.
 
 =head1 DESCRIPTION
 
@@ -169,7 +175,7 @@ D module provides utility functions to encode data and dump it to STDERR.
 
 =over 2
 
-=item * Export C<du> and C<dw> and C<dn> and C<dustr> and C<dwstr> and C<dnstr> functions. Don't conflict debug command such as 'p' because these function names are consist of two characters.
+=item * Export C<du> and C<dw> and C<dn> functions. Don't conflict debug command such as 'p' because these function names are consist of two characters.
 
 =item * Encode all strings in reference data in C<dustr> and C<dwstr> function.
 
@@ -178,8 +184,6 @@ D module provides utility functions to encode data and dump it to STDERR.
 =item * C<dw> is a short name of "dump Windows cp932"
 
 =item * C<dn> is a short name of "dump no encoding"
-
-=item * Onliner is useful. "useD;du $data;" or "useD;dw $data;" or "useD;dn $data;"
 
 =item * Use C<Dump> method of L<Data::Dumper> to dump data
 
@@ -191,41 +195,43 @@ D module provides utility functions to encode data and dump it to STDERR.
 
 =back
 
-=head1 EXPORT
-
-Export C<du> and C<dw> and C<dn> and C<dustr> and C<dwstr> and C<dnstr> functions.
-
 =head1 FUNCTIONS
 
-=head2 dustr
+=head2 du
 
 Encode all strings in reference data to UTF-8 and return string the reference data with file name and line number.
 
 If the argument is not reference data such as a string, it is also dumped in the same way as reference data.
+This function is exported.
 
-=head2 du
-
-Dump the result of dustr function to STDERR.
-
-=head2 dwstr
+=head2 dw
 
 Encode all strings in reference data to cp932 and dump the reference data to STDERR with file name and line number.
 
 If the argument is not reference data such as a string, it is also dumped in the same way as reference data.
+This function is exported.
 
-=head2 dw
-
-Dump the result of dwstr function to STDERR.
-
-=head2 dnstr
+=head2 dn
 
 Dump reference data to STDERR without encoding with file name and line number.
 
 If the argument is not reference data such as a string, it is also dumped in the same way as reference data.
+This function is exported.
 
-=head2 dn
+=head2 dustr
 
-Dump the result of dnstr function to STDERR.
+This function is used by du function.
+This function is exported.
+
+=head2 dwstr
+
+This function is used by dw function.
+This function is exported.
+
+=head2 dnstr
+
+This function is used by dn function.
+This function is exported.
 
 =head1 Bug Report
 
