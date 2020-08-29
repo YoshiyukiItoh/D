@@ -153,9 +153,9 @@ D - Provides utility functions to encode data and dump it to STDERR.
   dn $data;
 
   # Examples of useful oneliner.
-  use D; du $data;
-  use D; dw $data;
-  use D; dn $data;
+  use D;du $data;
+  use D;dw $data;
+  use D;dn $data;
 
   # Output example of du function.
   [
@@ -211,7 +211,7 @@ This function is exported.
 Following example is oneliner used. It can be used all functions.
 
   my $data = [{name => 'あ'}, {name => 'い'}];
-  use D; du $data;
+  use D;du $data;
 
 =head2 dw
 
