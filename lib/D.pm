@@ -248,14 +248,14 @@ Following example is get the UTF-8 encoded string.
 
 =head2 dwstr
 
-This function is called by dw function.
+This function is return that cp932 encode string.
 This function is exported.
 
-Following example is print the cp932 encoded data to STDOUT.
+Following example is get the cp932 encoded string.
 
   use D;
   my $data = [{name => 'あ'}, {name => 'い'}];
-  print dwstr $data;
+  my $str = dwstr $data;
 
 =head2 dnstr
 
