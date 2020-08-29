@@ -237,7 +237,7 @@ This function is exported.
 
 =head2 dustr
 
-This function is return that UTF-8 encode string.
+This function is return that UTF-8 encoded string.
 This function is exported.
 
 Following example is get the UTF-8 encoded string.
@@ -248,7 +248,7 @@ Following example is get the UTF-8 encoded string.
 
 =head2 dwstr
 
-This function is return that cp932 encode string.
+This function is return that cp932 encoded string.
 This function is exported.
 
 Following example is get the cp932 encoded string.
@@ -259,14 +259,14 @@ Following example is get the cp932 encoded string.
 
 =head2 dnstr
 
-This function is called by dn function.
+This function is return that without encoded string.
 This function is exported.
 
-Following example is print the without encoded data to STDOUT.
+Following example is get the without encoded string.
 
   use D;
   my $data = [{name => 'あ'}, {name => 'い'}];
-  print dnstr $data;
+  my $str = dnstr $data;
 
 =head1 Bug Report
 
