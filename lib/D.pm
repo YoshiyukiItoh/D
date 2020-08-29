@@ -237,14 +237,14 @@ This function is exported.
 
 =head2 dustr
 
-This function is called by du function.
+This function is return that UTF-8 encode string.
 This function is exported.
 
-Following example is print the UTF-8 encoded data to STDOUT.
+Following example is get the UTF-8 encoded string.
 
   use D;
   my $data = [{name => 'あ'}, {name => 'い'}];
-  print dustr $data;
+  my $str = dustr $data;
 
 =head2 dwstr
 
