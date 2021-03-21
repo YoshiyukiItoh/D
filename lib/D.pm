@@ -16,7 +16,7 @@ our @ISA = qw(Exporter);
 
 our @EXPORT = qw(du dw de dn dustr dwstr destr dnstr);
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 sub du {
   print STDERR dustr(@_);
