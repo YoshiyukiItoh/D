@@ -203,6 +203,8 @@ D module provides utility functions to encode data and dump it to STDERR.
 
 =item * C<dw> is a short name of "dump Windows cp932"
 
+=item * C<de> is a short name of "dump EUC-JP"
+
 =item * C<dn> is a short name of "dump no encoding"
 
 =item * Use C<Dump> method of L<Data::Dumper> to dump data
@@ -246,6 +248,18 @@ This function is exported.
   my $data = [{name => 'あ'}, {name => 'い'}];
   dw $data;
 
+=head2 de
+
+Encode all strings in reference data to EUC-JP and dump the reference data to STDERR with file name and line number.
+
+If the argument is not reference data such as a string, it is also dumped in the same way as reference data.
+
+This function is exported.
+
+  use D;
+  my $data = [{name => 'あ'}, {name => 'い'}];
+  de $data;
+
 =head2 dn
 
 Dump reference data to STDERR without encoding with file name and line number.
@@ -281,6 +295,18 @@ Following example is get the cp932 encoded string.
   use D;
   my $data = [{name => 'あ'}, {name => 'い'}];
   my $str = dwstr $data;
+
+=head2 destr
+
+This function is return that EUC-JP encoded string.
+
+This function is exported.
+
+Following example is get the EUC-JP encoded string.
+
+  use D;
+  my $data = [{name => 'あ'}, {name => 'い'}];
+  my $str = destr $data;
 
 =head2 dnstr
 
